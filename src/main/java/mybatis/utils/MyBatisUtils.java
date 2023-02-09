@@ -1,4 +1,4 @@
-package mabatis.utils;
+package mybatis.utils;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -35,7 +35,7 @@ public class MyBatisUtils {
     }
 
     /**
-     * 释放一个有效的Sqlsession对象
+     * 释放一个有效的SqlSession对象
      * @param session 准备释放的SqlSession对象
      */
     public static void closeSession(SqlSession session) {

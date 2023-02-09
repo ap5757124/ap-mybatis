@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:init" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="47ac8bf6-f632-4e58-8417-1e2ef9ec09fc" name="Default Changelist" comment="" />
+    <list default="true" id="47ac8bf6-f632-4e58-8417-1e2ef9ec09fc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/mybatis/entity/Goods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/goods.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/mybatis/MyBatisTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mabatis/utils/MyBatisUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mybatis/utils/MyBatisUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +39,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -24,6 +52,7 @@
     </option>
   </component>
   <component name="ProjectId" id="2KA3xyqa8utrBWP7RUKBh9npXgN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,7 +64,67 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../A2022/{10}--第12周Java必知必会框架入门-MyBatis/{1}--MyBatis入门/{0}--附件/MyBatis源代码/babytun建库脚本.sql" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.XML" />
+  </component>
+  <component name="RunManager" selected="JUnit.MyBatisTest.testGoodsSelectByPriceRang">
+    <configuration name="MyBatisTest.testGoodsSelectAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mybatis" />
+      <option name="MAIN_CLASS_NAME" value="mybatis.MyBatisTest" />
+      <option name="METHOD_NAME" value="testGoodsSelectAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.testGoodsSelectById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mybatis" />
+      <option name="MAIN_CLASS_NAME" value="mybatis.MyBatisTest" />
+      <option name="METHOD_NAME" value="testGoodsSelectById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyBatisTest.testGoodsSelectByPriceRang" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mybatis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mybatis" />
+      <option name="MAIN_CLASS_NAME" value="mybatis.MyBatisTest" />
+      <option name="METHOD_NAME" value="testGoodsSelectByPriceRang" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyBatisTest.testGoodsSelectByPriceRang" />
+        <item itemvalue="JUnit.MyBatisTest.testGoodsSelectById" />
+        <item itemvalue="JUnit.MyBatisTest.testGoodsSelectAll" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -51,44 +140,91 @@
       <workItem from="1673598794197" duration="20000" />
       <workItem from="1675754211891" duration="26000" />
       <workItem from="1675754251499" duration="4091000" />
+      <workItem from="1675843590783" duration="981000" />
+      <workItem from="1675906217893" duration="1098000" />
+      <workItem from="1675911559941" duration="637000" />
+      <workItem from="1675922732232" duration="10796000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="-1480" y="94" key="#Project_Structure" timestamp="1675925997762">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1480" y="94" key="#Project_Structure/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675925997762" />
     <state x="-1368" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1673598806186">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1368" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673598806186" />
+    <state x="-1155" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1675927137754">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1155" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675927137754" />
+    <state width="392" height="466" key="DebuggerActiveHint" timestamp="1675930108684">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="392" height="466" key="DebuggerActiveHint/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675930108684" />
     <state x="-1180" y="274" key="FileChooserDialogImpl" timestamp="1673420424360">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1180" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673420424360" />
-    <state width="1293" height="398" key="GridCell.Tab.0.bottom" timestamp="1673423430670">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1675933496174">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="398" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673423430670" />
-    <state width="1293" height="398" key="GridCell.Tab.0.center" timestamp="1673423430670">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675933496174" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1675933496173">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="398" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673423430670" />
-    <state width="1293" height="398" key="GridCell.Tab.0.left" timestamp="1673423430669">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675933496173" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1675933496173">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="398" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673423430669" />
-    <state width="1293" height="398" key="GridCell.Tab.0.right" timestamp="1673423430670">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675933496173" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1675933496174">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1293" height="398" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673423430670" />
-    <state x="-1459" y="164" key="SettingsEditor" timestamp="1673404165624">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675933496174" />
+    <state width="1877" height="247" key="GridCell.Tab.1.bottom" timestamp="1675930334817">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1459" y="164" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673404165624" />
+    <state width="1877" height="247" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675930334817" />
+    <state width="1877" height="247" key="GridCell.Tab.1.center" timestamp="1675930334817">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="247" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675930334817" />
+    <state width="1877" height="247" key="GridCell.Tab.1.left" timestamp="1675930334817">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="247" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675930334817" />
+    <state width="1877" height="247" key="GridCell.Tab.1.right" timestamp="1675930334817">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="247" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675930334817" />
+    <state x="-1403" y="123" key="SettingsEditor" timestamp="1675930916102">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1403" y="123" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675930916102" />
     <state x="-1117" y="291" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1673423400717">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1117" y="291" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1673423400717" />
+    <state x="-1258" y="223" width="596" height="594" key="find.popup" timestamp="1675926901088">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1258" y="223" width="596" height="594" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1675926901088" />
   </component>
 </project>

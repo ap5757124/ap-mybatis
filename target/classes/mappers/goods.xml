@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 命名空间-->
+<mapper namespace="goods">
+    <!--id 相当于sql的名称  resultType数据返回的对象-->
+    <select id="selectAll" resultType="mybatis.entity.Goods">
+        select * from t_goods order by goods_id desc limit 10;
+    </select>
+
+    <!--传参查询 -->
+    <select id="selectById" parameterType="Integer" resultType="mybatis.entity.Goods">
+        select * from t_goods where goods_id = #{value}
+    </select>
+
+    <!--通过价格区间查询-->
+    <select id="selectByPriceRang" parameterType="java.util.Map" resultType="mybatis.entity.Goods">
+        select * from t_goods
+        where current_price between #{min} and #{max}
+        order by current_price
+        limit 0,#{limit}
+    </select>
+
+</mapper>
