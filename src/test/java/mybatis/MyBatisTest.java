@@ -1,5 +1,6 @@
 package mybatis;
 
+import mybatis.dto.GoodsDTO;
 import mybatis.entity.Goods;
 import mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.session.SqlSession;
@@ -92,6 +93,58 @@ public class MyBatisTest {
                 System.out.println(m);
             }
         } catch (Exception e) {
+            throw e;
+        } finally {
+            MyBatisUtils.closeSession(session);
+        }
+    }
+
+    /**
+     * 利用ResultMap进行结果映射
+     * @throws Exception
+     */
+    @Test
+    public void testSelectGoodsDTO() throws Exception {
+        SqlSession session = null;
+        try {
+            session = MyBatisUtils.openSession();
+            List<GoodsDTO> list = session.selectList("goods.selectGoodsDTO");
+            for (GoodsDTO g : list) {
+                System.out.println(g.getGoods().getTitle());
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MyBatisUtils.closeSession(session);
+        }
+    }
+
+
+    /**
+     * insert  插入数据
+     * @throws Exception
+     */
+    @Test
+    public void testInsertGoods() throws Exception {
+        SqlSession session = null;
+        try {
+            session = MyBatisUtils.openSession();
+            Goods goods = new Goods();
+            goods.setTitle("测试商品");
+            goods.setSubTitle("测试子标题");
+            goods.setOriginalCost(200f);
+            goods.setCurrentPrice(100f);
+            goods.setDiscount(0.5f);
+            goods.setIsFreeDelivery(1);
+            goods.setCategoryId(43);
+            //insert() 方法返回值代表本次成功插入的记录总数
+            int num = session.insert("goods.insertGoods", goods);
+            session.commit();  //提交事务数据
+            System.out.println(goods.getGoodsId());
+        } catch (Exception e) {
+            if (session != null) {
+                session.rollback();  //错误事务回滚数据
+            }
             throw e;
         } finally {
             MyBatisUtils.closeSession(session);

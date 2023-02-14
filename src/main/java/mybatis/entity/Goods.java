@@ -7,6 +7,8 @@ public class Goods {
     private Float originalCost;  //原价
     private Float currentPrice;  //折后价
     private Float discount;  //折扣
+    private Integer isFreeDelivery;  //是否包邮  1-包邮 0-不包邮
+    private Integer categoryId;  //分类编号
 
     public Integer getGoodsId() {
         return goodsId;
@@ -72,6 +74,5 @@ public class Goods {
         this.categoryId = categoryId;
     }
 
-    private Integer isFreeDelivery;  //是否包邮  1-包邮 0-不包邮
-    private Integer categoryId;  //分类编号
+
 }
