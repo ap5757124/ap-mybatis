@@ -35,7 +35,6 @@
         from t_goods g, t_category c where g.category_id = c.category_id
     </select>
 
-
     <resultMap id="rmGoodsDto" type="mybatis.dto.GoodsDTO">
         <!--设置主键字段与属性映射-->
         <id property="goods.goodsId" column="goods_id"></id>
@@ -52,6 +51,7 @@
         <result property="category.categoryLevel" column="category_level"></result>
         <result property="category.categoryOrder" column="category_order"></result>
         <result property="test" column="test"/>
+
     </resultMap>
     <select id="selectGoodsDTO" resultMap="rmGoodsDto">
         select g.*, c.*, '1' as test
@@ -61,7 +61,8 @@
 
     <insert id="insertGoods" parameterType="mybatis.entity.Goods">
         insert into t_goods(title, sub_title, original_cost, current_price, discount, is_free_delivery, category_id)
-        values (#{value}, #{subTitle}, #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
+        values (#{title}, #{subTitle}, #{originalCost}, #{currentPrice}, #{discount}, #{isFreeDelivery}, #{categoryId})
+
         <selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">
             select last_insert_id()
         </selectKey>
