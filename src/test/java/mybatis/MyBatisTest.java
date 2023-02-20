@@ -151,5 +151,69 @@ public class MyBatisTest {
         }
     }
 
+    /**
+     * update  更新数据
+     * @throws Exception
+     */
+    @Test
+    public void testUpdateGoods() throws Exception {
+        SqlSession session = null;
+        try {
+            session = MyBatisUtils.openSession();
+            Goods goods = session.selectOne("goods.selectById", 2674);
+            goods.setTitle("更新测试商品");
+            int num = session.update("goods.updateGoods", goods);
+            session.commit();
+        } catch (Exception e) {
+            if (session != null) {
+                session.rollback();
+            }
+            throw (e);
+        } finally {
+            MyBatisUtils.closeSession(session);
+        }
+    }
 
+    /**
+     * delete语句
+     * @throws Exception
+     */
+    @Test
+    public void testDeleteGoods() throws Exception {
+        SqlSession session = null;
+        try {
+            session = MyBatisUtils.openSession();
+            int num = session.delete("goods.deleteGoods", 2674);
+            session.commit();
+        } catch (Exception e) {
+            if (session != null) {
+                session.rollback();
+            }
+            throw (e);
+        } finally {
+            MyBatisUtils.closeSession(session);
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
