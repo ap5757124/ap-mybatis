@@ -4,6 +4,8 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace 命名空间-->
 <mapper namespace="goods">
+    <!--开启二级缓存-->
+    <cache eviction="LRU" flushInterval="6000000" size="512" readOnly="true"/>
     <!--id 相当于sql的名称  resultType数据返回的对象-->
     <select id="selectAll" resultType="mybatis.entity.Goods">
         select * from t_goods order by goods_id desc limit 10;
@@ -100,6 +102,22 @@
     <delete id="deleteGoods" parameterType="Integer">
         delete from t_goods where goods_id = #{value};
     </delete>
+
+    <!--动态SQL-->
+    <select id="dynamicSQL" parameterType="java.util.Map" resultType="mybatis.entity.Goods">
+        select * from t_goods
+        <where>
+            <if test="categoryId != null">
+                and category_id = #{categoryId}
+            </if>
+            <if test="currentPrice != null">
+                and current_price &lt; #{currentPrice}
+            </if>
+        </where>
+    </select>
+
+
+
 
 
 
