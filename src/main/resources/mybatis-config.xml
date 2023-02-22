@@ -20,5 +20,6 @@
     </environments>
     <mappers>
         <mapper resource="mappers/goods.xml"></mapper>
+        <mapper resource="mappers/goods_detail.xml"></mapper>
     </mappers>
 </configuration>

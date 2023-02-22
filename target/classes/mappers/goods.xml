@@ -4,10 +4,26 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace 命名空间-->
 <mapper namespace="goods">
-    <!--开启二级缓存-->
+    <!--开启了二级缓存
+        eviction是缓存的清除策略,当缓存对象数量达到上限后,自动触发对应算法对缓存对象清除
+            1.LRU – 最近最久未使用:移除最长时间不被使用的对象。
+            O1 O2 O3 O4 .. O512
+            14 99 83 1     893
+            2.FIFO – 先进先出:按对象进入缓存的顺序来移除它们。
+            3.SOFT – 软引用:移除基于垃圾收集器状态和软引用规则的对象。
+            4.WEAK – 弱引用:更积极的移除基于垃圾收集器状态和弱引用规则的对象。
+        flushInterval  代表间隔多长时间自动清空缓存，单位毫秒
+        size  缓存的长度
+        readOnly  true,代表返回只读缓存,每次从缓存取出的时缓存对象本身。这种呢执行效率高。
+                  false,代表每次取出的时缓存对象的副本，每一次取出的对象都是不同的，这种安全性较高
+    -->
     <cache eviction="LRU" flushInterval="6000000" size="512" readOnly="true"/>
-    <!--id 相当于sql的名称  resultType数据返回的对象-->
-    <select id="selectAll" resultType="mybatis.entity.Goods">
+    <!--id 相当于sql的名称
+        resultType数据返回的对象
+        返回的结果很多 不推荐使用二级缓存  useCache 设置为false 代表查询结果不放入缓存
+        flushCache true 代表在sql执行后强制清空缓存
+     -->
+    <select id="selectAll" resultType="mybatis.entity.Goods" useCache="false">
         select * from t_goods order by goods_id desc limit 10;
     </select>
 
@@ -116,7 +132,26 @@
         </where>
     </select>
 
-
+    <!--
+            resultMap可用于说明一对多或者多对一的映射逻辑
+            id 是resultMap属性引用的标志
+            type 指向One的实体(Goods)
+        -->
+    <resultMap id="rmGoods1" type="mybatis.entity.Goods">
+        <!-- 映射goods对象的主键到goods_id字段 -->
+        <id column="goods_id" property="goodsId"></id>
+        <!--
+            collection的含义是,在
+            select * from t_goods limit 0,1 得到结果后,对所有Goods对象遍历得到goods_id字段值,
+            并代入到goodsDetail命名空间的findByGoodsId的SQL中执行查询,
+            将得到的"商品详情"集合赋值给goodsDetails List对象.
+        -->
+        <collection property="goodsDetails" select="goodsDetail.selectByGoodsId"
+                    column="goods_id"/>
+    </resultMap>
+    <select id="selectOneToMany" resultMap="rmGoods1">
+        select * from t_goods limit 0,10
+    </select>
 
 
 

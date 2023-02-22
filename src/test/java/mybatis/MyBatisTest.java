@@ -269,6 +269,26 @@ public class MyBatisTest {
             MyBatisUtils.closeSession(session);
         }
     }
+
+    /**
+     * 一对多对象关联查询
+     * @throws Exception
+     */
+    @Test
+    public void testSelectOneToMany() throws Exception {
+        SqlSession session = null;
+        try {
+            session = MyBatisUtils.openSession();
+            List<Goods> list = session.selectList("goods.selectOneToMany");
+            for(Goods goods:list) {
+                System.out.println(goods.getTitle() + ":" + goods.getGoodsDetails().size());
+            }
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            MyBatisUtils.closeSession(session);
+        }
+    }
     
 }
 

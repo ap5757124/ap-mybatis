@@ -1,5 +1,7 @@
 package mybatis.entity;
 
+import java.util.List;
+
 public class Goods {
     private Integer goodsId;  //商品编号
     private String title;  //商品名称
@@ -9,6 +11,7 @@ public class Goods {
     private Float discount;  //折扣
     private Integer isFreeDelivery;  //是否包邮  1-包邮 0-不包邮
     private Integer categoryId;  //分类编号
+    private List<GoodsDetail> goodsDetails;  //商品信息
 
     public Integer getGoodsId() {
         return goodsId;
@@ -75,4 +78,11 @@ public class Goods {
     }
 
 
+    public List<GoodsDetail> getGoodsDetails() {
+        return goodsDetails;
+    }
+
+    public void setGoodsDetails(List<GoodsDetail> goodsDetails) {
+        this.goodsDetails = goodsDetails;
+    }
 }
