@@ -1,7 +1,10 @@
 package mybatis;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import mybatis.dto.GoodsDTO;
 import mybatis.entity.Goods;
+import mybatis.entity.GoodsDetail;
 import mybatis.utils.MyBatisUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
@@ -284,6 +287,55 @@ public class MyBatisTest {
                 System.out.println(goods.getTitle() + ":" + goods.getGoodsDetails().size());
             }
         } catch (Exception e) {
+            throw e;
+        } finally {
+            MyBatisUtils.closeSession(session);
+        }
+    }
+
+    /**
+     * 多对一对象关联查询
+     * @throws Exception
+     */
+    @Test
+    public void testSelectManyToOne() throws Exception {
+        SqlSession session = null;
+        try {
+            session = MyBatisUtils.openSession();
+            List<GoodsDetail> list = session.selectList("goodsDetail.selectManyToOne");
+            for (GoodsDetail g : list) {
+                System.out.println(g.getGdPicUrl() + "---------" + g.getGoods().getTitle());
+            }
+        } catch (Exception e){
+            throw e;
+        } finally {
+            MyBatisUtils.closeSession(session);
+        }
+    }
+
+    /**
+     * 分页查询
+     * @throws Exception
+     */
+    @Test
+    public void testSelectPage() throws Exception {
+        SqlSession session = null;
+        try {
+            session = MyBatisUtils.openSession();
+            /*startPage方法会自动将下一次查询进行分页*/
+            PageHelper.startPage(2,10);
+            Page<Goods> page = (Page) session.selectList("goods.selectPage");
+            System.out.println("总页数:" + page.getPages());
+            System.out.println("总记录数:" + page.getTotal());
+            System.out.println("开始行号:" + page.getStartRow());
+            System.out.println("结束行号:" + page.getEndRow());
+            System.out.println("当前页码:" + page.getPageNum());
+            List<Goods> data = page.getResult();//当前页数据
+            for (Goods g : data) {
+                System.out.println(g.getTitle());
+            }
+            System.out.println("");
+        } catch (Exception e){
             throw e;
         } finally {
             MyBatisUtils.closeSession(session);

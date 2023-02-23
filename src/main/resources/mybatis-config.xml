@@ -7,6 +7,17 @@
         <!--把数据库中的下划线转为驼峰命名-->
         <setting name="mapUnderscoreToCamelCase" value="true"></setting>
     </settings>
+
+    <!--启用Pagehelper分页插件-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+            <!--设置数据库类型-->
+            <property name="helperDialect" value="mysql"/>
+            <!--分页合理化-->
+            <property name="reasonable" value="true"/>
+        </plugin>
+    </plugins>
+    
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
