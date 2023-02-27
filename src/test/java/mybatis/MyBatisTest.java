@@ -461,7 +461,30 @@ public class MyBatisTest {
         }
     }
 
-    
+    /**
+     * 注解
+     * 查询数据
+     * @throws Exception
+     */
+    @Test
+    public void testGoodsDAOSelectAll() throws Exception {
+        SqlSession session = null;
+        try {
+            session = MyBatisUtils.openSession();
+            GoodsDAO goodsDAO = session.getMapper(GoodsDAO.class);
+            //insert() 方法返回值代表本次成功插入的记录总数
+            List<Goods> list = goodsDAO.selectAll();
+            session.commit();  //提交事务数据
+            System.out.println(list.size());
+        } catch (Exception e) {
+            if (session != null) {
+                session.rollback();  //错误事务回滚数据
+            }
+            throw e;
+        } finally {
+            MyBatisUtils.closeSession(session);
+        }
+    }
 }
 
 
