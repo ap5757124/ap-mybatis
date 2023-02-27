@@ -37,11 +37,13 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        <!--日志-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
+        <!--分页插件-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
@@ -51,6 +53,14 @@
             <groupId>com.github.jsqlparser</groupId>
             <artifactId>jsqlparser</artifactId>
             <version>2.0</version>
+        </dependency>
+        <!--c3p0连接池
+            mybatis支持需要额外扩充一个类 C3P0DataSourceFactory
+        -->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.4</version>
         </dependency>
     </dependencies>
 

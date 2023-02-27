@@ -159,9 +159,23 @@
     </select>
 
 
+    <!--批处理 新增-->
+    <insert id="batchInsert" parameterType="java.util.List">
+        insert into t_goods (title, sub_title, original_cost, current_price, discount, is_free_delivery, category_id)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.title}, #{item.subTitle}, #{item.originalCost}, #{item.currentPrice}, #{item.discount}, #{item.isFreeDelivery}, #{item.categoryId})
+        </foreach>
+    </insert>
 
 
-
+    <!--批处理 删除-->
+    <delete id="batchDelete" parameterType="java.util.List">
+        delete from t_goods where goods_id in
+        <foreach collection="list" item="item"  index="index" open="(" close=")" separator=",">
+            (#{item})
+        </foreach>
+    </delete>
 
 
 
