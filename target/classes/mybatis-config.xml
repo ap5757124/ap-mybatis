@@ -46,5 +46,9 @@
     <mappers>
         <mapper resource="mappers/goods.xml"></mapper>
         <mapper resource="mappers/goods_detail.xml"></mapper>
+
+        <!--注解查询 两种当时-->
+        <!--<mapper class="mybatis.dao.GoodsDAO"></mapper>-->
+        <package name="mybatis.dao"/>
     </mappers>
 </configuration>
